@@ -1,10 +1,10 @@
 import React from "react";
 
-function Homepage() {
+function Reserve() {
     return (
         <div>
-            AWDWADWA
+            12345
         </div>
     )
 }
-export default Homepage;
+export default Reserve;
