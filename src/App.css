@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+nav{
+    display: flex;
+    gap: 20px;
+    width: 100vw;
+    background-color: yellow;
+}
+.adImg{
+    float: right;
+    height: 30vh;
+}
+.Footer{
+    position: absolute;
+    bottom: 0vh;
+    width: 100vw;
+    background-color: gray;
+    text-align: center;
+}
+.restaurantLogo{
+    width: 50vw;
+    height: 20vh;
+    display: block;
+}
+#dishFotoLabel{
+    position: absolute;
+    bottom: 20vh;
+}
+#dishFotoHolder{
+    display: grid;
+    grid-template-columns: 10vh 10vh;
+    grid-row: 10vw 10vw;
+    gap: 50px;
+}
+section img{
+    height: 10vh;
+    width: 10vw;
+}
