@@ -8,10 +8,6 @@ nav{
     width: 100vw;
     background-color: yellow;
 }
-.adImg{
-    float: right;
-    height: 30vh;
-}
 .Footer{
     position: absolute;
     bottom: 0vh;
@@ -34,7 +30,32 @@ nav{
     grid-row: 10vw 10vw;
     gap: 50px;
 }
-section img{
+#dishFotoHolder > img{
     height: 10vh;
     width: 10vw;
+}
+.logoSection > img{
+    position: relative;
+    top: 2vh;
+    left: 13vw;
+    height: 7vh;
+    width: 74vw;
+}
+.adSection{
+    position: relative;
+    top: 5vh;
+}
+.adSection > img{
+    float: right;
+    display: inline-block;
+    margin: 2vw;
+    width: 50vw;
+    height: 20vh;
+}
+.adSection > p{
+    position: relative;
+    width: 96vw;
+    height: 35vh;
+    left: 2vw;
+    font-size: 1.5rem;
 }
