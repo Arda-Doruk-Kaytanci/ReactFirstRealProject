@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import usePrevious from "./UsePrevious";
+import goBackImg from "./images/file.png"
 
 function Gobackarrow() {
     const navigate = useNavigate();
@@ -11,15 +12,14 @@ function Gobackarrow() {
         setcurrSite(location);
     }, [location])
     function onClickHandler() {
-        if(prevSite !== undefined)
-        {
+        if (prevSite !== undefined) {
             navigate(prevSite.pathname);
         }
     }
     return (
-        <div id="goback">
-            <button onClick={onClickHandler}>Back</button>
-        </div>
+        <>
+            <button className="goBack" onClick={onClickHandler}><img src={goBackImg} alt="GO Back Arrow"/></button>
+        </>
     )
 }
 export default Gobackarrow

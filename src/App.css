@@ -2,11 +2,56 @@
     margin: 0;
     padding: 0;
 }
+.App{
+    background-color: rgba(37, 130, 46, 1);
+    z-index: -100;
+    width: 100vw;
+    height: 100vh;
+}
 nav{
     display: flex;
-    gap: 20px;
+    gap: 8vw;
+    font-size: 1.2rem;
+    font-weight: 600;
     width: 100vw;
     background-color: yellow;
+}
+.contactLine{
+    position: relative;
+    top: 4vh;
+    width: 99.7vw;
+    color: rgba(157, 157, 157, 1) solid;
+    background-color:rgba(157, 157, 157, 1);
+    height: 3px;
+}
+.contactLine2{
+    position: relative;
+    left: -9.5vw;
+    width: 99.7vw;
+    color: rgb(74, 74, 74) solid;
+    background-color:rgb(10, 154, 73);
+    height: 3px;
+}
+.listContacts{
+    position: relative;
+    font-size: 1.5rem;
+    left: 9vw;
+    width: 91vw;
+    max-width: 91vw;
+    top: 27.5vh;
+}
+.link{
+    position: relative;
+    text-decoration: none;
+}
+.goBack{
+    position: relative;
+    left: 5vw   ;
+    background-color: transparent;
+    border: none;
+}
+.goBack img{
+    height: 3vh;
 }
 .Footer{
     position: absolute;
@@ -22,17 +67,38 @@ nav{
 }
 #dishFotoLabel{
     position: absolute;
-    bottom: 20vh;
+    font-size: 2rem;
+    left: 3vw;
+    text-shadow: 1px 1px rgb(2, 76, 111);
+    bottom: 5vh;
+    width: 92vw;
 }
 #dishFotoHolder{
-    display: grid;
-    grid-template-columns: 10vh 10vh;
-    grid-row: 10vw 10vw;
-    gap: 50px;
+    position: relative;
+    left: -2vw;
+    border:4px rgba(157, 157, 157, 1) outset;
+    width: 96vw;
+    height: 37vh;
+    display: grid;  
+    grid-template-columns: 15vh 15vh;
+    grid-row: 40vw 40vw;
+    grid-row-gap: 1vh;
+    grid-column-gap: 15vw;
+}
+#navLine{
+    width: 99.7vw;
+    color: rgba(157, 157, 157, 1) solid;
+    background-color:rgba(157, 157, 157, 1);
+    height: 3px;
 }
 #dishFotoHolder > img{
-    height: 10vh;
-    width: 10vw;
+    position: relative;
+    left: 2.2vw;
+    top: 1vh;
+    margin: 0.2rem;
+    height: 15vh;
+    width: 40vw;
+    border:5px rgba(157, 157, 157, 1) outset;
 }
 .logoSection > img{
     position: relative;
@@ -44,10 +110,12 @@ nav{
 .adSection{
     position: relative;
     top: 5vh;
+    width: 97vw;
 }
 .adSection > img{
     float: right;
     display: inline-block;
+    border:5px rgba(157, 157, 157, 1) outset;
     margin: 2vw;
     width: 50vw;
     height: 20vh;
@@ -55,7 +123,13 @@ nav{
 .adSection > p{
     position: relative;
     width: 96vw;
+    text-shadow: 2px 1px rgb(100, 98, 98);
     height: 35vh;
     left: 2vw;
     font-size: 1.5rem;
+}
+.hpLine{
+    color: rgba(157, 157, 157, 1);
+    height: 0.3vh;
+    width: 99vw;
 }

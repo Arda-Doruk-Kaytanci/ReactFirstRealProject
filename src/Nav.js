@@ -8,12 +8,14 @@ function Nav() {
     return (
         <div className="navBar">
             <BrowserRouter>
+                <hr id="navLine"></hr>
                 <nav>
-                    <Gobackarrow/>
-                    <Link to="/">Homepage</Link>
-                    <Link to="/Reserve">Reserve</Link>
-                    <Link to="/ContactUS">Contact Us</Link>
+                    <Gobackarrow />
+                    <Link to="/" className="link">Homepage</Link>
+                    <Link to="/Reserve" className="link">Reserve</Link>
+                    <Link to="/ContactUS" className="link">Contact Us</Link>
                 </nav>
+                <hr id="navLine"></hr>
                 <Routes>
                     <Route path="/" element={<Homepage />}></Route>
                     <Route path="/Reserve" element={<Reserve />}></Route>
