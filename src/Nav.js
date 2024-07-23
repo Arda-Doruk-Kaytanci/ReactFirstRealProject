@@ -12,14 +12,14 @@ function Nav() {
                 <nav>
                     <Gobackarrow />
                     <Link to="/" className="link">Homepage</Link>
-                    <Link to="/Reserve" className="link">Reserve</Link>
-                    <Link to="/ContactUS" className="link">Contact Us</Link>
+                    <Link to="/reserve" className="link">Reserve</Link>
+                    <Link to="/contactUS" className="link">Contact Us</Link>
                 </nav>
                 <hr id="navLine"></hr>
                 <Routes>
                     <Route path="/" element={<Homepage />}></Route>
-                    <Route path="/Reserve" element={<Reserve />}></Route>
-                    <Route path="/ContactUs" element={<ContactUS />}></Route>
+                    <Route path="/reserve" element={<Reserve />}></Route>
+                    <Route path="/contactUs" element={<ContactUS />}></Route>
                 </Routes>
             </BrowserRouter>
         </div>

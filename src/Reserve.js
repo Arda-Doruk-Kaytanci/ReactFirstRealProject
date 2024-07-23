@@ -1,10 +1,146 @@
-import React from "react";
-
+import React, { useState } from "react";
+import { isValidPhoneNumber, parsePhoneNumber } from "libphonenumber-js";
 function Reserve() {
+    var validator = require("email-validator");
+    const [diners, setDiners] = useState(1)
+    const [firstName, setFirstName] = useState("")
+    const [lastName, setLastName] = useState("");
+    const [phoneNumber, setPhoneNumber] = useState("");
+    const [email, setEmail] = useState("")
+    const [date, setDate] = useState("");
+    const clearForm = () => {
+        setFirstName("")
+        setLastName("")
+        setDate("")
+        setDiners(1)
+        setEmail("")
+        setPhoneNumber("")
+    }
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        alert("Reservation Made")
+        clearForm();
+    }
     return (
-        <div>
-            12345
-        </div>
+        <>
+            <form onSubmit={handleSubmit}>
+                <fieldset>
+                    <label htmlFor="FirstNameInput">First Name*:
+                        <input
+                            id="FirstNameInput"
+                            type="text"
+                            value={firstName}
+                            autoComplete="on"
+                            placeholder="First Name"
+                            required
+                            onChange={(e) => {
+                                setFirstName(e.target.value)
+                            }}
+                        >
+                        </input>
+                    </label>
+                    <label htmlFor="LastNameInput">Last Name*:
+                        <input
+                            id="LastNameInput"
+                            type="text"
+                            value={lastName}
+                            autoComplete="on"
+                            required
+                            placeholder="Last Name"
+                            onChange={(e) => {
+                                setLastName(e.target.value)
+                            }}
+                        >
+                        </input>
+                    </label>
+                    <label htmlFor="Email">E-mail*:
+                        <input
+                            id="Email"
+                            type="text"
+                            autoComplete="on"
+                            placeholder="E-mail"
+                            value={email}
+                            required
+                            onChange={(e) => {
+                                setEmail(e.target.value)
+                            }}
+                            onBlur={() => {
+                                if (!validator.validate(email) && email !== "") {
+                                    setEmail("");
+                                    return alert("Please enter a valid email")
+                                }
+                            }}
+                        >
+                        </input>
+                    </label>
+                    <label htmlFor="PhoneNumber">Phone Number*:
+                        <input
+                            id="PhoneNumber"
+                            type="tel"
+                            autoComplete="on"
+                            value={phoneNumber}
+                            required
+                            onChange={(e) => {
+                                setPhoneNumber(e.target.value)
+                            }}
+                            onBlur={() => {
+                                if (!isValidPhoneNumber(phoneNumber) && phoneNumber !== "") {
+                                    setPhoneNumber("")
+                                    return alert("Please enter a valid phone number with country specifier with plus.")
+                                }
+                            }}
+                        >
+                        </input>
+                    </label>
+                    <label htmlFor="Diners">Number of Diners* {diners}:
+                        <input
+                            id="Diners"
+                            type="range"
+                            max={10}
+                            autoComplete="on"
+                            min={1}
+                            value={diners}
+                            required
+                            onChange={(e) => {
+                                setDiners(e.target.value);
+                            }}
+                        >
+                        </input>
+                    </label>
+                    <label htmlFor="Date">Date*:
+                        <input
+                            id="Date"
+                            type="date"
+                            autoComplete="off"
+                            value={date}
+                            required
+                            onChange={(e) => {
+                                setDate(e.target.value);
+                            }}
+                            onBlur={() => {
+                                let dateObj = new Date();
+                                let dateArray = [
+                                    dateObj.getFullYear(),  
+                                    dateObj.getMonth() + 1, 
+                                    dateObj.getDate()       
+                                ];
+                                let datearr = date.split("-")
+                                for(let i = 0; i < 3; i++){
+                                    if(dateArray[i] > datearr[i]){
+                                        return alert("Please enter a valid date.")
+                                    }
+                                }
+                            }}
+                        >
+                        </input>
+                    </label>
+                    <input
+                        type="submit"
+                    >
+                    </input>
+                </fieldset>
+            </form>
+        </>
     )
 }
 export default Reserve;

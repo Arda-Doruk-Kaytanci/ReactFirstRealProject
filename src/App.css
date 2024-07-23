@@ -19,7 +19,7 @@ nav{
 .contactLine{
     position: relative;
     top: 4vh;
-    width: 99.7vw;
+    width: 99vw;
     color: rgba(157, 157, 157, 1) solid;
     background-color:rgba(157, 157, 157, 1);
     height: 3px;
@@ -27,7 +27,7 @@ nav{
 .contactLine2{
     position: relative;
     left: -9.5vw;
-    width: 99.7vw;
+    width: 99vw;
     color: rgb(74, 74, 74) solid;
     background-color:rgb(10, 154, 73);
     height: 3px;
