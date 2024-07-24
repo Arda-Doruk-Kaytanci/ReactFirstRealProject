@@ -134,6 +134,7 @@ nav{
 }
 fieldset{
     display: flex;
+    align-self: center;
     gap: 2vh;
     flex-direction: column;
     align-items: center;
@@ -148,16 +149,40 @@ fieldset label{
 label input{
     height: 4vh;
     background-color: antiquewhite;
+    border: 2px solid black;
     width: 70vw;
     font-size: 1.55rem;
 }
 label select{
     height: 4vh;
     width: 70vw;
+    border: 2px solid black;
     font-size: 1.5rem;
     background-color: antiquewhite;
 }
 .submitBtn{
     font-size: 1.5rem;
+    border: 2px solid black;
     background-color: antiquewhite;
+    border-radius: 10px;
+}
+#Diners{
+    position: relative;
+    top: 1vh;
+    appearance: none;
+    background-color: antiquewhite;
+    outline: none;
+    width: 70vw;
+    height: 2vh;
+    border-radius: 20px;
+    align-items: center;
+    justify-items: center;
+    border: 2px solid black;
+}
+#Diners::-webkit-slider-thumb{
+    appearance: none;
+    width: 3vw;
+    height: 1.75vh;
+    border-radius: 20px;
+    background-color: grey;
 }

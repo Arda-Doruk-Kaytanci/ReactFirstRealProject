@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { isValidPhoneNumber } from "libphonenumber-js";
 function Reserve() {
-    var validator = require("email-validator");
+    var validator = require("email-validator")
     const [diners, setDiners] = useState(1)
     const [firstName, setFirstName] = useState("")
-    const [lastName, setLastName] = useState("");
-    const [phoneNumber, setPhoneNumber] = useState("");
+    const [lastName, setLastName] = useState("")
+    const [phoneNumber, setPhoneNumber] = useState("")
     const [email, setEmail] = useState("")
-    const [date, setDate] = useState("");
-    const [time, setTime] = useState("9:00 - 11.00");
+    const [date, setDate] = useState("")
+    const [time, setTime] = useState("9:00 - 11.00")
     const clearForm = () => {
         setFirstName("")
         setLastName("")
@@ -141,18 +141,18 @@ function Reserve() {
                                         setDate("");
                                         return alert("Please enter a valid date.")
                                     }
-                                    else if(diffrence < 0){return true}
+                                    else if (diffrence < 0) { return true }
                                 }
                             }}
                         >
                         </input>
                     </label>
                     <br></br>
-                    <input
+                    <button
                         className="submitBtn"
                         type="submit"
-                    >
-                    </input>
+                    >Submit
+                    </button>
                 </fieldset>
             </form>
         </>
