@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { isValidPhoneNumber, parsePhoneNumber } from "libphonenumber-js";
+import { isValidPhoneNumber } from "libphonenumber-js";
 function Reserve() {
     var validator = require("email-validator");
     const [diners, setDiners] = useState(1)
@@ -8,6 +8,7 @@ function Reserve() {
     const [phoneNumber, setPhoneNumber] = useState("");
     const [email, setEmail] = useState("")
     const [date, setDate] = useState("");
+    const [time, setTime] = useState("9:00 - 11.00");
     const clearForm = () => {
         setFirstName("")
         setLastName("")
@@ -25,7 +26,7 @@ function Reserve() {
         <>
             <form onSubmit={handleSubmit}>
                 <fieldset>
-                    <label htmlFor="FirstNameInput">First Name*:
+                    <label htmlFor="FirstNameInput">First Name*:<br></br>
                         <input
                             id="FirstNameInput"
                             type="text"
@@ -39,7 +40,7 @@ function Reserve() {
                         >
                         </input>
                     </label>
-                    <label htmlFor="LastNameInput">Last Name*:
+                    <label htmlFor="LastNameInput">Last Name*:<br></br>
                         <input
                             id="LastNameInput"
                             type="text"
@@ -53,7 +54,7 @@ function Reserve() {
                         >
                         </input>
                     </label>
-                    <label htmlFor="Email">E-mail*:
+                    <label htmlFor="Email">E-mail*:<br></br>
                         <input
                             id="Email"
                             type="text"
@@ -73,9 +74,10 @@ function Reserve() {
                         >
                         </input>
                     </label>
-                    <label htmlFor="PhoneNumber">Phone Number*:
+                    <label htmlFor="PhoneNumber">Phone Number*:<br></br>
                         <input
                             id="PhoneNumber"
+                            placeholder="Phone Number"
                             type="tel"
                             autoComplete="on"
                             value={phoneNumber}
@@ -92,7 +94,7 @@ function Reserve() {
                         >
                         </input>
                     </label>
-                    <label htmlFor="Diners">Number of Diners* {diners}:
+                    <label htmlFor="Diners">Number of Diners* {diners}:<br></br>
                         <input
                             id="Diners"
                             type="range"
@@ -107,7 +109,15 @@ function Reserve() {
                         >
                         </input>
                     </label>
-                    <label htmlFor="Date">Date*:
+                    <label htmlFor="timeSelect">Time*:<br></br>
+                        <select id="timeSelect" required onChange={(e) => { setTime(e.target.value) }} value={time}>
+                            <option>9:00 - 11.00</option>
+                            <option>12:00 - 14:00</option>
+                            <option>15:00 - 17:00</option>
+                            <option>18:00 - 20:00</option>
+                        </select>
+                    </label>
+                    <label htmlFor="Date">Date*:<br></br>
                         <input
                             id="Date"
                             type="date"
@@ -120,21 +130,26 @@ function Reserve() {
                             onBlur={() => {
                                 let dateObj = new Date();
                                 let dateArray = [
-                                    dateObj.getFullYear(),  
-                                    dateObj.getMonth() + 1, 
-                                    dateObj.getDate()       
+                                    dateObj.getFullYear(),
+                                    dateObj.getMonth() + 1,
+                                    dateObj.getDate()
                                 ];
                                 let datearr = date.split("-")
-                                for(let i = 0; i < 3; i++){
-                                    if(dateArray[i] > datearr[i]){
+                                for (let i = 0; i < 3; i++) {
+                                    let diffrence = dateArray[i] - datearr[i]
+                                    if (diffrence > 0) {
+                                        setDate("");
                                         return alert("Please enter a valid date.")
                                     }
+                                    else if(diffrence < 0){return true}
                                 }
                             }}
                         >
                         </input>
                     </label>
+                    <br></br>
                     <input
+                        className="submitBtn"
                         type="submit"
                     >
                     </input>
