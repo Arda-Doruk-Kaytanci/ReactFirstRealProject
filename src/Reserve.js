@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { isValidPhoneNumber } from "libphonenumber-js";
+import { Link } from "react-router-dom";
 function Reserve() {
     var validator = require("email-validator")
     const [diners, setDiners] = useState(1)
@@ -146,6 +147,9 @@ function Reserve() {
                             }}
                         >
                         </input>
+                    </label>
+                    <label>Your Table:
+                        <Link to="table" id="reserveTable">Choose A Table</Link>
                     </label>
                     <br></br>
                     <button

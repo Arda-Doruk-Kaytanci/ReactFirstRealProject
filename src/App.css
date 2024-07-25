@@ -113,7 +113,6 @@ nav{
 }
 .adSection > img{
     float: right;
-    display: inline-block;
     border:5px rgba(157, 157, 157, 1) outset;
     margin: 2vw;
     width: 50vw;
@@ -185,4 +184,32 @@ label select{
     height: 1.75vh;
     border-radius: 20px;
     background-color: grey;
+}
+#reserveTable{
+    position: relative;
+    color: grey;
+    background-color: antiquewhite;
+    border: 2px solid black;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+.infop{
+    position: relative;
+    left: 10vw;
+    text-align: center;
+    font-size: 1.3rem;
+    max-width: 80vw;
+}
+#radioButtonContainer{
+    display: grid;
+    position: absolute;
+    left: 24vw;
+    grid-template-columns: 20vw 7vw 20vw 7vw;
+    grid-template-rows: 10vh 10vh 10vh;
+}
+.radioLabel{
+    align-self: center;
+    font-size: 1.2rem;
+}
+.radioButton{
 }
