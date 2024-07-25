@@ -4,7 +4,6 @@ import Homepage from "./Homepage";
 import Reserve from "./Reserve";
 import ContactUS from "./ContactUs";
 import Gobackarrow from "./Gobackarrow";
-import ChooseTable from "./ChooseTable";
 function Nav() {
     return (
         <div className="navBar">
@@ -20,7 +19,6 @@ function Nav() {
                 <Routes>
                     <Route path="/" element={<Homepage />}></Route>
                     <Route path="reserve" element={<Reserve />}></Route>
-                    <Route path="reserve/table" element={<ChooseTable />}></Route>
                     <Route path="contact-us" element={<ContactUS />}></Route>
                 </Routes>
             </BrowserRouter>

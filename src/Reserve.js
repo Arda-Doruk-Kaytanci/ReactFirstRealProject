@@ -1,15 +1,57 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { isValidPhoneNumber } from "libphonenumber-js";
-import { Link } from "react-router-dom";
+import fakeAPI from "./fakeAPI";
+
 function Reserve() {
+    const OptionGenerator = () => {
+        return (
+            <>
+                {avaiableTimes.map((item, index) => (
+                    <option key={index}>{item}</option>
+                ))}
+            </>
+        )
+    }
+    const TableGenerator = () => {
+        switch (place) {
+            case ("Near Toilet"):
+                return (
+                    <>
+                        <option>AWdaw</option>
+                    </>
+                )
+            case ("Near Window"):
+                return (
+                    <>
+                        <option>wdadwdwad</option>
+                    </>
+                )
+                case ("Near Playground"):
+                    return (
+                        <>
+                            <option>AWdaw</option>
+                        </>
+                    )
+                case ("Near Exit"):
+                    return (
+                        <>
+                            <option>wdadwdwad</option>
+                        </>
+                    )
+                default: return <></>
+        }
+    }
     var validator = require("email-validator")
     const [diners, setDiners] = useState(1)
+    const [table, setTable] = useState("")
+    const [place, setPlace] = useState("")
     const [firstName, setFirstName] = useState("")
     const [lastName, setLastName] = useState("")
     const [phoneNumber, setPhoneNumber] = useState("")
     const [email, setEmail] = useState("")
     const [date, setDate] = useState("")
-    const [time, setTime] = useState("9:00 - 11.00")
+    const [avaiableTimes, setAvaiableTimes] = useState([])
+    const [time, setTime] = useState()
     const clearForm = () => {
         setFirstName("")
         setLastName("")
@@ -23,6 +65,10 @@ function Reserve() {
         alert("Reservation Made")
         clearForm();
     }
+    useEffect(() => {
+        console.log(date.split("-"))
+        setAvaiableTimes(fakeAPI.fetchAPI(date))
+    }, [date])
     return (
         <>
             <form onSubmit={handleSubmit}>
@@ -95,29 +141,6 @@ function Reserve() {
                         >
                         </input>
                     </label>
-                    <label htmlFor="Diners">Number of Diners* {diners}:<br></br>
-                        <input
-                            id="Diners"
-                            type="range"
-                            max={10}
-                            autoComplete="on"
-                            min={1}
-                            value={diners}
-                            required
-                            onChange={(e) => {
-                                setDiners(e.target.value);
-                            }}
-                        >
-                        </input>
-                    </label>
-                    <label htmlFor="timeSelect">Time*:<br></br>
-                        <select id="timeSelect" required onChange={(e) => { setTime(e.target.value) }} value={time}>
-                            <option>9:00 - 11.00</option>
-                            <option>12:00 - 14:00</option>
-                            <option>15:00 - 17:00</option>
-                            <option>18:00 - 20:00</option>
-                        </select>
-                    </label>
                     <label htmlFor="Date">Date*:<br></br>
                         <input
                             id="Date"
@@ -129,6 +152,7 @@ function Reserve() {
                                 setDate(e.target.value);
                             }}
                             onBlur={() => {
+                                console.log(avaiableTimes)
                                 let dateObj = new Date();
                                 let dateArray = [
                                     dateObj.getFullYear(),
@@ -148,10 +172,41 @@ function Reserve() {
                         >
                         </input>
                     </label>
-                    <label>Your Table:
-                        <Link to="table" id="reserveTable">Choose A Table</Link>
+                    <label htmlFor="timeSelect">Time*:<br></br>
+                        <select id="timeSelect" required onChange={(e) => { setTime(e.target.value); console.log(place) }} value={time}>
+                            <OptionGenerator></OptionGenerator>
+                        </select>
                     </label>
-                    <br></br>
+                    <label htmlFor="tableorder">Table*:<br></br>
+                        <select id="tableorder" required onChange={(e) => { setPlace(e.target.value); }} value={place}>
+                            <option>--- Select Place ---</option>
+                            <option>Near Window</option>
+                            <option>Near Toilet</option>
+                            <option>Near Playground</option>
+                            <option>Near Exit</option>
+                        </select>
+                    </label>
+                    <label>
+                        <select id="table" required onChange={(e) => { setTable(e.target.value) }} value={table}>
+                            <option value={""}>--- Select Table ---</option>
+                            <TableGenerator></TableGenerator>
+                        </select>
+                    </label>
+                    <label htmlFor="Diners">Number of Diners* {diners}:<br></br>
+                        <input
+                            id="Diners"
+                            type="range"
+                            max={10}
+                            autoComplete="on"
+                            min={1}
+                            value={diners}
+                            required
+                            onChange={(e) => {
+                                setDiners(e.target.value);
+                            }}
+                        >
+                        </input>
+                    </label>
                     <button
                         className="submitBtn"
                         type="submit"
