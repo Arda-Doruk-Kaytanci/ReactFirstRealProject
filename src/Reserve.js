@@ -32,22 +32,22 @@ function Reserve() {
                         <option>A3</option>
                     </>
                 )
-                case ("Near Playground"):
-                    return (
-                        <>
-                            <option>B1</option>
-                            <option>C2</option>
-                            <option>C3</option>
-                        </>
-                    )
-                case ("Near Exit"):
-                    return (
-                        <>
-                            <option>D1</option>
-                            <option>D2</option>
-                        </>
-                    )
-                default: return <></>
+            case ("Near Playground"):
+                return (
+                    <>
+                        <option>B1</option>
+                        <option>C2</option>
+                        <option>C3</option>
+                    </>
+                )
+            case ("Near Exit"):
+                return (
+                    <>
+                        <option>D1</option>
+                        <option>D2</option>
+                    </>
+                )
+            default: return <></>
         }
     }
     var validator = require("email-validator")

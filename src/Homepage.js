@@ -9,7 +9,7 @@ function Homepage() {
     return (
         <div className="Homepage">
             <section className="logoSection">
-                <img src={Logo} alt="Logo of Little Lemon Restaurant" className="restaurantLogo" />
+                <img src={Logo} alt="Logo of Little Lemon Restaurant" className="restaurantLogo" id="restaurantlogoo" />
             </section>
             <section className="adSection">
                 <hr className="hpLine"></hr>

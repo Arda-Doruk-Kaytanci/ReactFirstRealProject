@@ -14,7 +14,7 @@ function Nav() {
                     <Gobackarrow />
                     <Link to="/" className="link">Homepage</Link>
                     <Link to="reserve" className="link">Reserve</Link>
-                    <Link to="contact-us" className="link">Contact Us</Link>
+                    <Link to="contact-us" className="link">Contact</Link>
                 </nav>
                 <hr id="navLine"></hr>
                 <Routes>

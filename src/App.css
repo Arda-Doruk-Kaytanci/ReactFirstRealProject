@@ -8,193 +8,420 @@
     width: 100vw;
     height: 100vh;
 }
-nav{
-    display: flex;
-    gap: 8vw;
-    font-size: 1.2rem;
-    font-weight: 600;
-    width: 100vw;
-    background-color: yellow;
+@media only screen and (max-width: 800px) {
+    nav{
+        display: flex;
+        gap: 8vw;
+        font-size: 1.2rem;
+        font-weight: 600;
+        width: 100vw;
+        background-color: yellow;
+    }
+    .contactLine{
+        position: relative;
+        top: 4vh;
+        width: 99vw;
+        color: rgba(157, 157, 157, 1) solid;
+        background-color:rgba(157, 157, 157, 1);
+        height: 3px;
+    }
+    .contactLine2{
+        position: relative;
+        left: -9.5vw;
+        width: 99vw;
+        color: rgb(74, 74, 74) solid;
+        background-color:rgb(10, 154, 73);
+        height: 3px;
+    }
+    .listContacts{
+        position: relative;
+        font-size: 1.5rem;
+        left: 9vw;
+        width: 91vw;
+        max-width: 91vw;
+        top: 27.5vh;
+    }
+    .link{
+        position: relative;
+        width: 25vw;
+        height: 3vh;
+        text-decoration: none;
+    }
+    .goBack{
+        position: relative;
+        left: 5vw;
+        background-color: transparent;
+        border: none;
+    }
+    .goBack img{
+        height: 3vh;
+    }
+    .Footer{
+        position: absolute;
+        bottom: 0vh;
+        width: 100vw;
+        background-color: gray;
+        text-align: center;
+    }
+    .restaurantLogo{
+        width: 50vw;
+        height: 20vh;
+        display: block;
+    }
+    #dishFotoLabel{
+        position: absolute;
+        font-size: 2rem;
+        left: 3vw;
+        text-shadow: 1px 1px rgb(2, 76, 111);
+        bottom: 3vh;
+        width: 92vw;
+    }
+    #dishFotoHolder{
+        position: relative;
+        left: -2vw;
+        border:4px rgba(157, 157, 157, 1) outset;
+        width: 96vw;
+        height: 37vh;
+        display: flexbox;
+        gap: 20vw;
+    }
+    #navLine{
+        width: 99.7vw;
+        color: rgba(157, 157, 157, 1) solid;
+        background-color:rgba(157, 157, 157, 1);
+        height: 3px;
+    }
+    #dishFotoHolder > img{
+        position: relative;
+        left: 2.2vw;
+        top: 1vh;
+        margin-left: 1.5vw;
+        margin-right: 1.5vw;
+        margin-top: 0.7vh;
+        height: 15vh;
+        width: 40vw;
+        border:5px rgba(157, 157, 157, 1) outset;
+    }
+    .logoSection > img{
+        position: relative;
+        top: 2vh;
+        left: 13vw;
+        height: 7vh;
+        width: 74vw;
+    }
+    .adSection{
+        position: relative;
+        top: 5vh;
+        width: 97vw;
+    }
+    .adSection > img{
+        float: right;
+        border:5px rgba(157, 157, 157, 1) outset;
+        margin: 2vw;
+        width: 50vw;
+        height: 20vh;
+    }
+    .adSection > p{
+        position: relative;
+        width: 96vw;
+        text-shadow: 2px 1px rgb(100, 98, 98);
+        height: 35vh;
+        left: 2vw;
+        font-size: 1.5rem;
+    }
+    .hpLine{
+        color: rgba(157, 157, 157, 1);
+        height: 0.3vh;
+        width: 99vw;
+    }
+    fieldset{
+        display: flex;
+        align-self: center;
+        gap: 1vh;
+        flex-direction: column;
+        align-items: center;
+        height: 92.4vh;
+    }
+    fieldset label{
+        position: relative;
+        top: 3vh;
+        color: rgb(226, 233, 38);
+        font-size: 1.5rem;
+    }
+    label input{
+        height: 4vh;
+        background-color: antiquewhite;
+        border: 2px solid black;
+        width: 70vw;
+        font-size: 1.5rem;
+    }
+    label select{
+        height: 4vh;
+        width: 70vw;
+        border: 2px solid black;
+        font-size: 1.5rem;
+        background-color: antiquewhite;
+    }
+    .submitBtn{
+        position: relative;
+        top: 6vh;
+        font-size: 1.5rem;
+        border: 2px solid black;
+        background-color: antiquewhite;
+        border-radius: 10px;
+    }
+    #Diners{
+        position: relative;
+        top: 1vh;
+        appearance: none;
+        background-color: antiquewhite;
+        outline: none;
+        width: 70vw;
+        height: 2vh;
+        border-radius: 20px;
+        align-items: center;
+        justify-items: center;
+        border: 2px solid black;
+    }
+    #Diners::-webkit-slider-thumb{
+        appearance: none;
+        width: 3vw;
+        height: 1.75vh;
+        border-radius: 20px;
+        background-color: grey;
+    }
+    #reserveTable{
+        position: relative;
+        color: grey;
+        background-color: antiquewhite;
+        border: 2px solid black;
+        text-decoration: none;
+        font-size: 1.5rem;
+    }
+    option{
+        text-align: center;
+    }
+    #congrats{
+        font-size: 1.5rem;
+        position: relative;
+        left: 15vw;
+        top: 10vh;
+        width: 85vw;
+        height: 80vh;
+        align-items:center;
+    }
+    #congrats label{
+
+    }
+    ul{
+        list-style:none;
+    }
 }
-.contactLine{
-    position: relative;
-    top: 4vh;
-    width: 99vw;
-    color: rgba(157, 157, 157, 1) solid;
-    background-color:rgba(157, 157, 157, 1);
-    height: 3px;
-}
-.contactLine2{
-    position: relative;
-    left: -9.5vw;
-    width: 99vw;
-    color: rgb(74, 74, 74) solid;
-    background-color:rgb(10, 154, 73);
-    height: 3px;
-}
-.listContacts{
-    position: relative;
-    font-size: 1.5rem;
-    left: 9vw;
-    width: 91vw;
-    max-width: 91vw;
-    top: 27.5vh;
-}
-.link{
-    position: relative;
-    text-decoration: none;
-}
-.goBack{
-    position: relative;
-    left: 5vw   ;
-    background-color: transparent;
-    border: none;
-}
-.goBack img{
-    height: 3vh;
-}
-.Footer{
-    position: absolute;
-    bottom: 0vh;
-    width: 100vw;
-    background-color: gray;
-    text-align: center;
-}
-.restaurantLogo{
-    width: 50vw;
-    height: 20vh;
-    display: block;
-}
-#dishFotoLabel{
-    position: absolute;
-    font-size: 2rem;
-    left: 3vw;
-    text-shadow: 1px 1px rgb(2, 76, 111);
-    bottom: 3vh;
-    width: 92vw;
-}
-#dishFotoHolder{
-    position: relative;
-    left: -2vw;
-    border:4px rgba(157, 157, 157, 1) outset;
-    width: 96vw;
-    height: 37vh;
-    display: flexbox;
-    gap: 20vw;
-}
-#navLine{
-    width: 99.7vw;
-    color: rgba(157, 157, 157, 1) solid;
-    background-color:rgba(157, 157, 157, 1);
-    height: 3px;
-}
-#dishFotoHolder > img{
-    position: relative;
-    left: 2.2vw;
-    top: 1vh;
-    margin-left: 1.5vw;
-    margin-right: 1.5vw;
-    margin-top: 0.7vh;
-    height: 15vh;
-    width: 40vw;
-    border:5px rgba(157, 157, 157, 1) outset;
-}
-.logoSection > img{
-    position: relative;
-    top: 2vh;
-    left: 13vw;
-    height: 7vh;
-    width: 74vw;
-}
-.adSection{
-    position: relative;
-    top: 5vh;
-    width: 97vw;
-}
-.adSection > img{
-    float: right;
-    border:5px rgba(157, 157, 157, 1) outset;
-    margin: 2vw;
-    width: 50vw;
-    height: 20vh;
-}
-.adSection > p{
-    position: relative;
-    width: 96vw;
-    text-shadow: 2px 1px rgb(100, 98, 98);
-    height: 35vh;
-    left: 2vw;
-    font-size: 1.5rem;
-}
-.hpLine{
-    color: rgba(157, 157, 157, 1);
-    height: 0.3vh;
-    width: 99vw;
-}
-fieldset{
-    display: flex;
-    align-self: center;
-    gap: 1vh;
-    flex-direction: column;
-    align-items: center;
-    height: 92.4vh;
-}
-fieldset label{
-    position: relative;
-    top: 3vh;
-    color: rgb(226, 233, 38);
-    font-size: 1.5rem;
-}
-label input{
-    height: 4vh;
-    background-color: antiquewhite;
-    border: 2px solid black;
-    width: 70vw;
-    font-size: 1.5rem;
-}
-label select{
-    height: 4vh;
-    width: 70vw;
-    border: 2px solid black;
-    font-size: 1.5rem;
-    background-color: antiquewhite;
-}
-.submitBtn{
-    position: relative;
-    top: 6vh;
-    font-size: 1.5rem;
-    border: 2px solid black;
-    background-color: antiquewhite;
-    border-radius: 10px;
-}
-#Diners{
-    position: relative;
-    top: 1vh;
-    appearance: none;
-    background-color: antiquewhite;
-    outline: none;
-    width: 70vw;
-    height: 2vh;
-    border-radius: 20px;
-    align-items: center;
-    justify-items: center;
-    border: 2px solid black;
-}
-#Diners::-webkit-slider-thumb{
-    appearance: none;
-    width: 3vw;
-    height: 1.75vh;
-    border-radius: 20px;
-    background-color: grey;
-}
-#reserveTable{
-    position: relative;
-    color: grey;
-    background-color: antiquewhite;
-    border: 2px solid black;
-    text-decoration: none;
-    font-size: 1.5rem;
-}
-option{
-    text-align: center;
+@media only screen and (min-width: 801px){
+    nav{
+        display: flex;
+        gap: 8vw;
+        font-size: 1.2rem;
+        font-weight: 600;
+        width: 100vw;
+        background-color: yellow;
+    }
+    .contactLine{
+        position: relative;
+        top: 4vh;
+        width: 99vw;
+        color: rgba(157, 157, 157, 1) solid;
+        background-color:rgba(157, 157, 157, 1);
+        height: 3px;
+    }
+    .contactLine2{
+        position: relative;
+        left: -9.5vw;
+        width: 99vw;
+        color: rgb(74, 74, 74) solid;
+        background-color:rgb(10, 154, 73);
+        height: 3px;
+    }
+    .listContacts{
+        position: relative;
+        font-size: 1.5rem;
+        left: 9vw;
+        width: 91vw;
+        max-width: 91vw;
+        top: 27.5vh;
+    }
+    .link{
+        position: relative;
+        width: 25vw;
+        height: 3vh;
+        text-decoration: none;
+    }
+    .goBack{
+        position: relative;
+        left: 5vw;
+        background-color: transparent;
+        border: none;
+    }
+    .goBack img{
+        height: 3vh;
+    }
+    .Footer{
+        position: absolute;
+        bottom: -5vh;
+        width: 100vw;
+        background-color: gray;
+        text-align: center;
+    }
+    #restaurantlogoo{
+        position: relative;
+        left: 25vw;
+        width: 50vw;
+        height: 15vh;
+    }
+    #dishFotoLabel{
+        position: relative;
+        font-size: 2rem;
+        text-shadow: 1px 1px rgb(2, 76, 111);
+        bottom: -10vh;
+        width: 92vw;
+    }
+    #dishFotoHolder{
+        position:relative;
+        left: 5vw;
+        bottom: -3vh;
+        border:4px rgba(157, 157, 157, 1) outset;
+        width: 90vw;
+        height: 20vh;
+        display: flex;
+        gap: 1vw;
+    }
+    #navLine{
+        width: 99.7vw;
+        color: rgba(157, 157, 157, 1) solid;
+        background-color:rgba(157, 157, 157, 1);
+        height: 3px;
+    }
+    #dishFotoHolder > img{
+        position: relative;
+        left: 2.2vw;
+        top: 1vh;
+        margin-top: 1vh;
+        height: 15vh;
+        width: 20vw;
+        border:5px rgba(157, 157, 157, 1) outset;
+    }
+    .logoSection > img{
+        position: relative;
+        top: 2vh;
+        left: 13vw;
+        height: 7vh;
+        width: 74vw;
+    }
+    .adSection{
+        position: relative;
+        top: 5vh;
+        width: 97vw;
+    }
+    .adSection > img{
+        float: right;
+        border:5px rgba(157, 157, 157, 1) outset;
+        margin: 2vw;
+        width: 25vw;
+        height: 25vh;
+    }
+    .adSection > p{
+        position: relative;
+        width: 96vw;
+        text-shadow: 2px 1px rgb(100, 98, 98);
+        height: 35vh;
+        left: 2vw;
+        font-size: 1.5rem;
+    }
+    .hpLine{
+        color: rgba(157, 157, 157, 1);
+        height: 0.3vh;
+        width: 99vw;
+    }
+    fieldset{
+        display: flex;
+        align-self: center;
+        gap: 0.5vh;
+        flex-direction: column;
+        align-items: center;
+        height: 94.5vh;
+    }
+    fieldset label{
+        position: relative;
+        top: 3vh;
+        color: rgb(226, 233, 38);
+        font-size: 1.5rem;
+    }
+    label input{
+        height: 4vh;
+        background-color: antiquewhite;
+        border: 2px solid black;
+        width: 70vw;
+        font-size: 1.5rem;
+    }
+    label select{
+        height: 4vh;
+        width: 70vw;
+        border: 2px solid black;
+        font-size: 1.5rem;
+        background-color: antiquewhite;
+    }
+    .submitBtn{
+        position: relative;
+        top: 6vh;
+        font-size: 1.5rem;
+        border: 2px solid black;
+        background-color: antiquewhite;
+        border-radius: 10px;
+    }
+    #Diners{
+        position: relative;
+        top: 1vh;
+        appearance: none;
+        background-color: antiquewhite;
+        outline: none;
+        width: 70vw;
+        height: 2vh;
+        border-radius: 20px;
+        align-items: center;
+        justify-items: center;
+        border: 2px solid black;
+    }
+    #Diners::-webkit-slider-thumb{
+        appearance: none;
+        width: 3vw;
+        height: 1.75vh;
+        border-radius: 20px;
+        background-color: grey;
+    }
+    #reserveTable{
+        position: relative;
+        color: grey;
+        background-color: antiquewhite;
+        border: 2px solid black;
+        text-decoration: none;
+        font-size: 1.5rem;
+    }
+    option{
+        text-align: center;
+    }
+    #congrats{
+        font-size: 1.5rem;
+        position: relative;
+        left: 15vw;
+        top: 10vh;
+        width: 85vw;
+        height: 80vh;
+        align-items:center;
+    }
+    #congrats label{
+
+    }
+    ul{
+        list-style:none;
+    }
 }

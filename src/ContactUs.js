@@ -5,7 +5,7 @@ function ContactUS() {
     return (
         <>
             <section className="logoSection">
-                <img src={Logo} alt="Logo of Little Lemon Restaurant" className="restaurantLogo" />
+                <img src={Logo} alt="Logo of Little Lemon Restaurant" className="restaurantLogo" id="restaurantlogoo"/>
                 <hr className="contactLine"></hr>
             </section>
             <section>
