@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { isValidPhoneNumber } from "libphonenumber-js";
 import fakeAPI from "./fakeAPI";
+import { useNavigate } from "react-router";
 
 function Reserve() {
+    var navigator = useNavigate();
     const OptionGenerator = () => {
         return (
             <>
@@ -17,25 +19,32 @@ function Reserve() {
             case ("Near Toilet"):
                 return (
                     <>
-                        <option>AWdaw</option>
+                        <option>A1</option>
+                        <option>B2</option>
                     </>
                 )
             case ("Near Window"):
                 return (
                     <>
-                        <option>wdadwdwad</option>
+                        <option>B3</option>
+                        <option>C1</option>
+                        <option>A2</option>
+                        <option>A3</option>
                     </>
                 )
                 case ("Near Playground"):
                     return (
                         <>
-                            <option>AWdaw</option>
+                            <option>B1</option>
+                            <option>C2</option>
+                            <option>C3</option>
                         </>
                     )
                 case ("Near Exit"):
                     return (
                         <>
-                            <option>wdadwdwad</option>
+                            <option>D1</option>
+                            <option>D2</option>
                         </>
                     )
                 default: return <></>
@@ -61,8 +70,9 @@ function Reserve() {
         setPhoneNumber("")
     }
     const handleSubmit = (e) => {
-        e.preventDefault();
-        alert("Reservation Made")
+        e.preventDefault()
+        fakeAPI.gatherAPI(time, table)
+        navigator("succesful")
         clearForm();
     }
     useEffect(() => {

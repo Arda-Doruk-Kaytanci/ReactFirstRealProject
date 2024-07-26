@@ -1,3 +1,7 @@
+
+
+let resulttime = []
+let resulttable = []
 const seededGenerator = (date, hour) => {
   const m = 9;
   const d = date.split("-")[2]
@@ -19,9 +23,29 @@ const fetchAPI = (date) => {
   return result;
 };
 
+const gatherAPI = (time, table)=>{
+  resulttime.push(time)
+  resulttable.push(table)
+}
+const sentAPI = (name) =>{
+  if(name === "time")
+     {
+      return resulttime
+     }
+  if(name === "table"){
+    return resulttable
+  }
+}
+const deleteAPI = () =>{
+  resulttime = []
+  resulttable = []
+}
 const submitAPI = formData => true;
 
 const fakeAPI = {
+  sentAPI: sentAPI,
+  deleteAPI: deleteAPI,
+  gatherAPI: gatherAPI,
   fetchAPI: fetchAPI,
   submitAPI: submitAPI,
 }
