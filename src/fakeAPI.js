@@ -28,6 +28,7 @@ const gatherAPI = (time, table, date) => {
   resulttime.push(time)
   resulttable.push(table)
   resultdate.push(date)
+  return resultdate[resultdate.length - 1]
 }
 const sentAPI = (name) => {
   if (name === "time") {
